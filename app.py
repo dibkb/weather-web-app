@@ -7,7 +7,7 @@ from datetime import datetime
 key = 'fe5cb81842cf4c3d9dd40103212303'
 
 
-ENV = 'dev'
+ENV = 'prod'
 
 if ENV == 'dev':
     app.debug = True
