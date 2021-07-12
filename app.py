@@ -51,11 +51,14 @@ def result():
       return redirect(url_for('result',city = city))  
 
    json = get_json(request.args.get('city'))
-   url =  'http:'+ json['current']['condition']['icon']
-   ft = FormatTime(json)
-   updated_time = ft.updated_time()
-   local_time = ft.current_time()
-   local_date = ft.current_date()
+   if json['error']:
+       
+
+    url =  'http:'+ json['current']['condition']['icon']
+    ft = FormatTime(json)
+    updated_time = ft.updated_time()
+    local_time = ft.current_time()
+    local_date = ft.current_date()
 
    return render_template('result.html', json = json,icon_url = url,
    updated_time = updated_time,local_time = local_time,local_date = local_date)
