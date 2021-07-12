@@ -5,9 +5,20 @@ import requests
 from datetime import datetime
 
 key = 'fe5cb81842cf4c3d9dd40103212303'
+
+
+ENV = 'dev'
+
+if ENV == 'dev':
+    app.debug = True
+
+else:
+    app.debug = False    
+
+
 def get_json(city):
     url = f'https://api.weatherapi.com/v1/current.json?key=fe5cb81842cf4c3d9dd40103212303&q={city}&aqi=no'
-    return requests.get(url).json()
+    return requests.get(url ,verify=False).json()
 class FormatTime():
     def __init__(self,json):
         self.json = json
@@ -46,28 +57,39 @@ def search():
 
 @app.route("/result")
 def result():
-   if request.method == 'POST':
+    if request.method == 'POST':
+        city = request.form['city']
+        return redirect(url_for('result',city = city))  
+
+    json = get_json(request.args.get('city'))
+    if len(json) == 1:
+        return redirect(url_for('typo'))
+    else:
+
+        url =  'http:'+ json['current']['condition']['icon']
+        ft = FormatTime(json)
+        updated_time = ft.updated_time()
+        local_time = ft.current_time()
+        local_date = ft.current_date()
+
+    return render_template('result.html', json = json,icon_url = url,
+    updated_time = updated_time,local_time = local_time,local_date = local_date)
+
+# 404 error
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404error.html'), 404
+
+@app.route('/na')
+def naError():
+    return render_template('naError.html')
+
+@app.route('/typeErroe',methods=['GET', 'POST'])
+def typo():
+    if request.method == 'POST':
       city = request.form['city']
-      return redirect(url_for('result',city = city))  
-
-   json = get_json(request.args.get('city'))
-   if json['error']:
-       
-
-    url =  'http:'+ json['current']['condition']['icon']
-    ft = FormatTime(json)
-    updated_time = ft.updated_time()
-    local_time = ft.current_time()
-    local_date = ft.current_date()
-
-   return render_template('result.html', json = json,icon_url = url,
-   updated_time = updated_time,local_time = local_time,local_date = local_date)
-
-@app.route("/error")
-def error():
-    return render_template('404error.html')
-
-
+      return redirect(url_for('result',city = city))
+    return render_template('typoerror.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
