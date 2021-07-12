@@ -1,0 +1,9 @@
+{% extends "errorbase.html" %}
+{% block content %}
+
+<h1 class="heading-h1">Error 404</h1>
+<h3 class="sub-heading">Something is broken here</h3>
+<a href="{{ url_for('home') }}"><button class="home btn-404">Go Home</button></a>
+
+
+{% endblock content %}

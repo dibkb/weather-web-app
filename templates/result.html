@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/result.css">
+
+    <title>Result</title>
+  </head>
+  <body>
+    <section class="the-valley">
+      <nav class="navbar navbar-expand-md navbar-light bg-trasparent">
+            <a class="navbar-brand text-white" href="{{ url_for('home') }}">
+              <img src="/static/img/logo-white.svg" alt="" class="brand-logo">
+              weather69
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mb-2 mb-lg-0 text-center ms-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="{{ url_for('home') }}">Home</a>
+                </li>
+              </ul>
+            </div>
+      </nav>
+      <form class="search-form row" action="{{url_for('result')}}">
+        <input type="text" placeholder="Search another city" name="city" class=" col-10 search-box">
+        <button type="submit" class="col-2 search-btn"><i class="fas fa-search"></i></button>
+     </form>
+     <section class="weather-card">
+       <div class="primary-info">
+         <div class="temp">{{ json['current']['temp_c'] }}°C</div>
+         <div class="location">
+           <div class="city">
+             {{ json['location']['name'] }}
+           </div>
+           <div class="region">
+            {{ json['location']['region'] }},{{ json['location']['country'] }}
+           </div>
+         </div>
+         <div class="icon">
+           <img src="{{ icon_url }}" alt="">
+           <div class="text">{{json['current']['condition']['text']}}</div>
+         </div>
+       </div>
+       <div class="additional-info">
+         <div class="row-1">
+            <div class="time-info">Feels like {{json['current']['feelslike_c']}}°C</div>
+            <div class="time-info">{{ local_time }}</div>
+         </div>
+         <div class="row-2">
+           <div class="time-info">Updated {{ updated_time }}</div>
+           <div class="time-info">{{ local_date }}</div>
+         </div>
+       </div>
+     </section>
+     <section class="right-side-info">
+       <div class="heading">Weather Details</div>
+       <hr class="horizonatal-line">
+       <ul class="additional-info-right">
+         <li>Humidity : {{ json['current']['humidity'] }}%</li>
+         <li>Cloud : {{ json['current']['cloud'] }}%</li>
+         <li>Wind Speed : {{ json['current']['wind_kph'] }} km/hr</li>
+         <li>Wind Degree : {{ json['current']['wind_degree'] }}°</li>
+         <li>Wind Direction : {{ json['current']['wind_dir'] }}</li>
+         <li>Pressure : {{ json['current']['pressure_mb'] }} mB</li>
+         <li>Precipitation : {{ json['current']['precip_mm'] }} mm</li>
+         <li>Visible distance :  {{ json['current']['vis_km'] }} km</li>
+         <li>Gust :  {{ json['current']['gust_kph'] }} km/hr</li>
+         <li>UV :  {{ json['current']['gust_kph'] }}</li>
+       </ul>
+       <hr class="horizonatal-line">
+     </section>
+
+  </section>
+
+   
+
+
+
+    <!-- GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="/static/result.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>

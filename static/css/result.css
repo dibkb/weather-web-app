@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&family=Comfortaa:wght@400;500;700&display=swap');
+
+:root{
+   --font-primary:font-family: 'Roboto', sans-serif;
+   --font-secondary:font-family: 'Poppins', sans-serif;
+   --font-weight-regular:400;
+}
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-size: 16px;
+   transition: 0.369s;
+   transition-timing-function: ease;
+
+}
+li,ul,a,p,h1{
+   text-decoration: none;
+   text-transform: none;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+html,body{
+   overflow-x: hidden!important; 
+}
+.the-valley{
+   background: linear-gradient(0deg, rgba(0, 0, 0, 0.27), rgba(0, 0, 0, 0.27)), 
+   url('../img/the_valley.webp');
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: 50% 50%;
+   background-attachment: fixed;
+   height: 100vh!important;
+   color: #fff!important;
+   font-family: 'Comfortaa', sans-serif;
+   display: grid;
+   grid-template-columns: repeat(12,1fr);
+   row-gap: 27px;
+   grid-template-rows: repeat(8,1fr);
+   column-gap: 20px;
+   padding: 0 7% 0 7%;
+
+}
+.navbar{
+   padding-top: 3%;
+   grid-column: 1/7;
+}
+.navbar-brand:hover,.nav-link:hover{
+   filter: brightness(169%);
+}
+.search-form{
+   margin-left: 3px;
+   grid-column: 1/7;
+   grid-row: 2;
+}
+.the-valley nav .navbar-brand{
+   color: #4C3862;
+
+}
+.search-form input[type = 'text']{
+   color: #fff;
+}
+.search-form input[type = 'text']:focus{
+   outline: none;
+}
+.search-form input[type = 'text']::placeholder{
+   color: #fff;
+   opacity: .72;
+}
+.nav-link{
+   margin: 0;
+   padding-right: 0!important;
+}
+
+.search-btn{
+   padding: 0;
+}
+.search-box{
+   background: linear-gradient(102.1deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+   backdrop-filter: blur(9px);
+   border: none;
+   padding: 3% 21px;
+   border-top-left-radius: 9px;
+   border-bottom-left-radius: 9px;
+}
+
+.search-btn{
+   background: linear-gradient(90.31deg, #4C3862 0.27%, #304F72 105.14%);
+   border-top-right-radius: 9px;
+   border-bottom-right-radius: 9px;
+   border: none;
+}
+.search-btn:hover{
+   filter: contrast(141%);
+ }
+.search-btn i{
+   color: #fff;
+}
+.weather-card{
+   grid-column: 1/7;
+   grid-row: 4;
+   background: linear-gradient(102.1deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+   border-radius: 9px;
+   display: flex;
+   flex-direction: column;
+   padding: 3%;
+}
+.primary-info{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items:center;
+}
+.primary-info .temp{
+   font-size: 6em;
+   margin-right: .3em;
+}
+.primary-info .location{
+   margin-top: -21px;
+}
+.primary-info .location .city{
+   line-height: 99.9%;
+   font-size: 30px;
+   margin-bottom: 12px;
+}
+.primary-info .location .region,.primary-info .icon .text{
+   font-size: .9em;
+   line-height: 99.9%;
+}
+.primary-info .icon{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   margin-top: -36px;
+}
+.primary-info .icon .text{
+   display: block;
+   text-align: center;
+}
+.weather-card .additional-info{
+   display: flex;
+   flex-direction: column;
+   margin-top: -21px;
+}
+.weather-card .additional-info .row-1,.weather-card .additional-info .row-2{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+   margin: 3% 0;
+}
+.right-side-info{
+   border-radius: 9px;
+   margin: 6% 0 6% 0;
+   grid-column: 8/13;
+   grid-row: 1/9;
+   background: linear-gradient(102.1deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+   padding: 9%;
+}
+.right-side-info .heading{
+   font-size: 18px;
+}
+.right-side-info hr{
+   height: 3px;
+   color: #fff;
+   border-radius: 27px;
+}
+.right-side-info .additional-info-right{
+   margin: 45px 0;
+}
+.right-side-info ul li{
+   margin-bottom: 1rem;
+}
+.social span{
+   text-transform: uppercase;
+}
+
+
+@media (max-width: 575.98px){
+   .navbar-toggler{
+      border:none;
+   }
+   .the-valley{
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      padding: 0 21px;
+      height: auto!important;
+   }
+   .right-side-info{
+      margin-bottom: 45px;
+      border-radius: 9px;
+   }
+   .primary-info .temp{
+     font-size:2.8125em;
+   }
+   .primary-info{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items:center;
+   }
+   .primary-info .location{
+      margin-top: 5px!important;
+   }
+   .primary-info .location .city{
+      font-size: 21px;
+   }
+   .primary-info .location .region{
+      font-size: 12px;
+   }
+   .primary-info .icon{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -12px;
+   }
+   .primary-info .icon img{
+      width: 45px;
+   }
+   .primary-info .icon .text{
+      font-size: 12px;
+   }
+   .additional-info .time-info{
+      font-size: 14px;
+   }
+   .weather-card .additional-info{
+      margin-top: 0px;
+   }
+   .weather-card .additional-info{
+      display: flex;
+      flex-direction: column;
+      margin-top: 21px;
+   }
+   .weather-card .additional-info .row-1,.weather-card .additional-info .row-2{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin: 9px 0;
+   }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px){
+
+   .the-valley{
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      padding: 0 48px;
+      height: auto!important;
+
+   }
+   .right-side-info{
+      margin-top: 3%;
+      margin-bottom: 45px;
+      border-radius: 9px;
+   }
+   .primary-info .temp{
+     font-size:3em;
+   }
+
+   .primary-info .location .city{
+      font-size: 21px;
+   }
+
+   .primary-info .icon img{
+      width: 72px;
+   }
+   .primary-info .icon{
+      margin-top: -9px;
+   }
+   .primary-info .location{
+      margin-top: 5px!important;
+   }
+
+   .weather-card{
+      margin-top: 3%;
+   } 
+   .weather-card .additional-info{
+      margin-top: 0px;
+   }
+}
+@media (min-width: 768px) and (max-width: 991.98px){
+   .the-valley{
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      padding: 0 48px;
+      height: auto!important;
+   }
+}
+@media (min-width: 922px) and (max-width: 1199.98px){
+   .the-valley{
+      display: flex;
+      flex-direction: column;
+   }
+
+   .right-side-info{
+      width: auto;
+      border-radius: 9px;
+      margin: 6% 0 6% 0;
+   }
+   .weather-card{
+      max-width: 100%;
+   }
+   .right-side-info{
+      margin-top: 3%;
+      margin-bottom: 45px;
+      border-radius: 9px;
+   }
+   .primary-info .temp{
+     font-size:4.5em;
+   }
+
+   .primary-info .location .city{
+      font-size: 45px;
+   }
+   .primary-info .location .region{
+      font-size: 27px;
+   }
+
+   .primary-info .icon img{
+      width: 72px;
+   }
+   .primary-info .icon{
+      margin-top: -9px;
+   }
+   .primary-info .location{
+      margin-top: 5px!important;
+   }
+   .weather-card .additional-info{
+      margin-top: 9px;
+   }
+
+}

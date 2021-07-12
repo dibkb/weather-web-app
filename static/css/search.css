@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;500;700&family=Comfortaa:wght@400;500;700&display=swap');
+
+:root{
+   --font-primary:font-family: 'Roboto', sans-serif;
+   --font-secondary:font-family: 'Poppins', sans-serif;
+   --font-weight-regular:400;
+}
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-size: 16px;
+   transition: 0.369s;
+   transition-timing-function: ease;
+
+
+}
+li,ul,a,p,h1{
+   text-decoration: none;
+   text-transform: none;
+   list-style: none;
+   margin: 0;
+   padding: 0;
+}
+
+html,body{
+   overflow-x: hidden!important;
+   height: 100vh!important;
+}
+.navbar-brand{
+   font-family: 'Comfortaa', sans-serif;
+   color:#4C3862!important;
+   font-weight: 500;
+}
+.navbar-brand:hover,.nav-link:hover{
+   filter: brightness(169%);
+}
+.brand-logo{
+   height: 45px;
+   fill: #4C3862!important;
+}
+.nav-link,.navbar-brand-number{
+   color: #B03E0C!important;
+   font-weight: 500;
+}
+.nav-link{
+   display: block;
+}
+
+.hero{
+   display: grid;
+   grid-template-columns: repeat(12,1fr);
+   grid-auto-rows: 1fr;
+   grid-gap: 27px;
+   font-family: 'Comfortaa', sans-serif;
+
+}
+.img-col{
+   object-fit: cover;
+   max-width: 100%;
+   grid-row: 1;
+   grid-column: 1/7;
+}
+.img-col img{
+   width: 90%;
+   height: auto;
+}
+.search-col{
+   margin-top: 8em;
+   grid-row: 1;
+   grid-column: 7/13;
+}
+
+.search-box{
+   background: linear-gradient(102.1deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.08) 100%);
+   border: 2.1px solid #414269;
+   padding: 3% 21px;
+   border-top-left-radius: 9px;
+   border-bottom-left-radius: 9px;
+}
+
+.search-btn{
+   background: linear-gradient(90.31deg, #4C3862 0.27%, #304F72 105.14%);
+   border-top-right-radius: 9px;
+   border-bottom-right-radius: 9px;
+   border: none;
+}
+.search-btn:hover{
+  filter: contrast(141%);
+}
+.search-btn i{
+   color: #fff;
+}
+
+.search-form input[type = 'text']:focus{
+   outline: none;
+}
+.search-col .quote{
+   display: block;
+   margin-top: 180px;
+   width: 90%;
+   margin-left: auto;
+}
+.search-col .quote blockquote{
+   text-align: center;
+}
+.search-col .quote p{
+   font-family: 'Poppins', sans-serif;
+   font-style: italic;
+   font-size: 15px;
+   color: rgba(0, 0, 0, 0.6);
+   text-align: right;
+}
+.blockquote-footer{
+   text-align: right;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 500;
+   color: #000;
+   margin-top: 6px;
+}
+@media (max-width: 575.98px){
+   html,body{
+      overflow-x: hidden!important;
+      height: 100vh!important;
+   }
+   *{
+      padding: 0;
+      margin: 0;
+   }
+
+   .hero{
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      grid-template-rows: 320px 400px;
+   }
+   .navbar-toggler{
+      border:none;
+   }
+   .img-col{
+      object-fit: cover;
+      max-width: 100%;
+      grid-row: 1;
+      display: block;
+      margin: 0 auto;
+      grid-column: 1/8;
+   }
+   
+   .img-col img{
+      width: 300px;
+   }
+   .search-col{
+      margin: 0;
+      grid-row: 2;
+      grid-column: 1/8;
+   }
+   .search-col form{
+      margin: 0 auto;
+   }
+   .search-col .quote{
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 100px;
+   }
+
+   .search-col .quote blockquote{
+      text-align: center;
+   }
+   .search-col .quote p{
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+   }
+   .blockquote-footer{
+      text-align: right;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #000;
+      margin-top: 6px;
+   }
+
+   }
+   @media (min-width: 576px) and (max-width: 768px){
+      *{
+         padding: 0;
+         margin: 0;
+      }
+      
+   .hero{
+      display: grid;
+      grid-template-columns: repeat(6,1fr);
+      grid-template-rows: 400px 400px;
+   }
+   .navbar-toggler{
+      border:none;
+   }
+   .img-col{
+      object-fit: cover;
+      max-width: 100%;
+      grid-row: 1;
+      display: block;
+      margin: 0 auto;
+      grid-column: 1/7;
+   }
+   .img-col img{
+      display: block;
+      margin: 0 auto;
+      width: 81%;
+      height: auto;
+   }
+   .search-col{
+      margin: 0;
+      grid-row: 2;
+      grid-column: 2/6;
+   }
+   .search-col .quote{
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 100px;
+   }
+   .search-form{
+      margin-top: 27px;
+
+   }
+
+   .search-col .quote blockquote{
+      text-align: center;
+   }
+   .search-col .quote p{
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-size: 15px;
+      color: rgba(0, 0, 0, 0.6);
+      text-align: center;
+   }
+   .blockquote-footer{
+      text-align: right;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      color: #000;
+      margin-top: 6px;
+   }
+
+   }

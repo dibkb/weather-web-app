@@ -1,0 +1,14 @@
+{% extends "errorbase.html" %}
+{% block content %}
+<h3 class="sub-heading">Oops looks like there is a typo here.</h3>
+<h6 class="">Make sure the city you enter exists.</h6>
+
+<form class="search-form row sm-container" method="POST">
+   <input type="text" placeholder="Search city" name="city" class=" col-10 search-box">
+   <button type="submit" class="col-2 search-btn"><i class="fas fa-search"></i></button>
+</form>
+
+<a href="{{ url_for('home') }}"><button class="home">Go Home</button></a>
+
+
+{% endblock content %}

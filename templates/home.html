@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/CSS/styles.css">
+    <title>Weather 69</title>
+  </head>
+  <body>
+   <nav class="navbar navbar-expand-md navbar-light bg-trasparent my-3">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+           <img src="/static/img/logo.svg" alt="" class="brand-logo">
+           weather<span class="navbar-brand navbar-brand-number">69</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 mx-auto text-center">
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 text-center">
+            <li class="nav-item px-md-3 login-btn py-0">
+              <a class="nav-link" href="#">Log In</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <section class="hero container">
+      <div class="text-col">
+        <p class="heading-paragraph">i want to know the</p>
+        <h1 class="heading">Weather</h1>
+        <div class="paragraph mt-3">
+          <p class="my-md-3">Enter your city and know the exact weather status.</p>
+          <p class="my-md-5 my-md-3">Nascetur molestie suspendisse arcu sollicitudin. Eu proin proin pellentesque eu ut amet donec. Quis luctus interdum at egestas id. Vel feugiat egestas interdum eu tempor magna leo sed. Elementum nulla gravida enim ornare egestas vestibulum sagittis.</p>
+        </div>
+        <a href="{{ url_for('search') }}" class="get-started-btn">Get Started</a>
+      </div>
+      <div class="img-col">
+        <img src="/static/img/scenery.png" alt="" class="text-center">
+        <div class="social">
+          <span>connect with me </span>
+          <a href=""><i class="fab fa-facebook-f"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+   
+
+
+
+
+
+    <!-- GSAP  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+    <script src="/static/home.js"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <!-- GSAP -->
+    
+
+
+  </body>
+</html>
